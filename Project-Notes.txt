@@ -1,0 +1,113 @@
+Recommender System is a piece of code which is intelligent enough to understand user preferences.
+
+Recommender System knows what exactly user wants!
+
+Totally recommender systems are four types:-
+
+
+1) popularity based recommender systems
+   takes all the popular items into seperate section and recommends to everyone
+
+best and popular items in the platform is brought to the surface.
+
+   ex:-
+	* trending section in Youtube
+
+        * IMDB Top 250 movies recommender system
+    
+These will not work based on the user's prefference, it simply segregates top products/top listed items of the website and shows to all.
+
+popularity based recommender system can be built based on the formulae, whether it is simple formulae or complex formulae.
+
+
+2) content based recommender system
+   
+   if user likes one mobile, system will recommends "similar mobiles user may like"
+
+   if user likes one movie , system will recommends "similar movies user may like" 
+
+ex:- movie recommender system
+	movie - actor ,actress, director, production house, genre, story.
+
+	movie recommender system built by taking the similarity between two movies based on all the above factors.
+
+Logic:-
+	if i have watched few Mahesh Babu movies then , I may like Mahesh babu as actor and wish to watch all his movies.
+
+
+3) collaborative filtering based recommender system
+
+	-works based on the user preferences
+	-It doesn't works based on the items similarity, works based on the ratings given by the user to the itemz..
+
+let's see how ot works with a simple example!
+
+let u1,u2 be two users watch movies 
+m1,m2,m3,m4,m5 be movies watched by the users and have ratings for the movies.
+
+plot a graph with u1,u2 on y and x axis based on the ratings by them to the movies 
+like, u1 have rated m1 as 5,u2 rated as 4 then (4,5)be the cordinate on the graph so.on plot for all the movies 
+
+2d cordinate system 
+	- now find all the distances from each other point (euclidean distance)
+	- so, which movie is nearset to the movie m1 then recomended to the users.
+
+4) Hybrid based recommender system
+    
+	Mix up all the three recommender system, and recommends based on that.
+
+	mixture of all of these recommender systems taken weightage of each of three and taken a new output and recommends as the perfect output.
+
+
+So, In this project we are looking for popuarity based recommender system
+
+Not much complex formulae is used here
+Highest average rated books are shown - top 50 rated books
+
+
+by taking books,ratings get top 50 books with >= 250 num_ratings and sorted them based on the avg_rating in descending order
+
+
+books - book name 
+
+ratings - userid,bookid,rating
+
+
+consider a grid of users and books = each cell has rating given by the user corresponding to the book.
+
+	user1 user2 user3 ...
+book1	5	3	10
+book2	4.5	.	.
+book3	.	.	.
+.
+.
+.
+.
+
+
+so we have to bring data in this format
+
+we are not going to consider each and every book/each and every rating given by the user.
+
+we consider only those users who gave more than 200 ratings.
+
+we consider only those books which has atleast 50 ratings, which means we are going to eliminate all the un-popular books.
+
+
+now that we got a 2d co-ordiante system
+[706 rows x 810 columns]
+
+706 books with 810 columns
+
+
+each book became a vector - 810 space.
+
+now we are trying to get the euclidean distance between each and every book
+
+
+706 X 706 size vector (with cosine similarities)
+
+
+
+
+  
